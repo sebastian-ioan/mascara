@@ -1,0 +1,29 @@
+
+server:
+  port: 8888
+  ssl:
+    client-auth: want
+    enabled-protocols: TLSv1.2
+    key-store: classpath:mascara.jks
+    key-store-password: password
+
+
+logging:
+  level:
+    ROOT: info
+
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: mascara
+      password: password
+      jdbc-url: jdbc:oracle:thin:@localhost:1521:xe
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: oracle
